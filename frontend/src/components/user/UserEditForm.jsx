@@ -1,18 +1,42 @@
-import React, { useState } from 'react'
-
+import axios from 'axios'
+import React, { useEffect, useState } from 'react'
+import { useNavigate, useParams } from 'react-router-dom'
 import { updateUser } from '../services/api'
 
-export default props => {
-    const [name, setName] = useState(props.name)
-    const [email, setEmail] = useState(props.email)
-    const [password, setPassword] = useState(props.password)
-    const [cpf, setCpf] = useState(props.cpf)
-    const [birthdate, setBirthDate] = useState(props.birthdate)
+const BASE_URL = 'http://localhost:8080'
+
+export default _ => {
+    const navigate = useNavigate();
+    const [user, setUser] = useState({});
+    const userID = useParams()['*'];
+
+    useEffect(function() {
+        axios.get(`${BASE_URL}/users/${userID}`)
+        .then(resp => setUser(resp.data));
+    }, []);
+
+    const [name, setName] = useState(user.name);
+    const [email, setEmail] = useState(user.email);
+    const [password, setPassword] = useState(user.password);
+    const [cpf, setCpf] = useState(user.cpf);
+    const [birthdate, setBirthDate] = useState(user.birthdate);
+
+    function submit(e) {
+        e.preventDefault();
+        updateUser(name, email, password, cpf, birthdate, userID);
+        navigate('/');
+    }
+
+    useEffect(function() {
+        setName(user.name);
+        setEmail(user.email);
+        setCpf(user.cpf);
+    }, [user]);
 
     return (
         <div className='UserForm'>
             <span><b>Alteração de Dados</b></span>
-            <form>
+            <form onSubmit={e => submit(e)}>
                 <label>Nome
                     <input
                         type='text'
@@ -31,8 +55,7 @@ export default props => {
                     <input
                         type='text'
                         placeholder='Senha do usuário'
-                        onChange={e => setPassword(e.target.value)}
-                        value={password}/>
+                        onChange={e => setPassword(e.target.value)}/>
                 </label>
                 <label>Cpf:
                     <input
@@ -44,10 +67,9 @@ export default props => {
                 <label>Data de Nascimento
                     <input
                         type='Date'
-                        onChange={e => setBirthDate(e.target.value)}
-                        value={birthdate}/>
+                        onChange={e => setBirthDate(e.target.value)}/>
                 </label>
-                <button type='submit'>Criar</button>
+                <button type='submit'>Salvar</button>
             </form>
         </div>
     )

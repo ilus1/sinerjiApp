@@ -10,7 +10,6 @@ export function getList() {
     }
 }
 
-
 export function newUser(name, email, passowrd, cpf, birthdate) {
     axios.post((`${BASE_URL}/users/new`) , {
         "name": name,
@@ -25,7 +24,7 @@ export function newUser(name, email, passowrd, cpf, birthdate) {
 
 
 export function updateUser(name, email, passowrd, cpf, birthdate, id) {
-    axios.update((`${BASE_URL}/users/edit/${id}`) , {
+    axios.put((`${BASE_URL}/users/edit/${id}`) , {
         "name": name,
         "email": email,
         "passowrd": passowrd,

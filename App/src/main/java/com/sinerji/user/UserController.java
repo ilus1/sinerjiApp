@@ -5,6 +5,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 
 @CrossOrigin(origins = "http://localhost:3000")
@@ -18,6 +19,15 @@ public class UserController {
         model.addAttribute("listUsers", listUsers);
 
         return listUsers;
+    }
+
+    @GetMapping("/users/{id}")
+    public User showUserList(@PathVariable("id") Integer id) throws UserNotFoundException {
+        User user = service.get(id);
+        if (user.getId() != null) {
+            return user;
+        }
+        throw  new UserNotFoundException("Usuário não foi encontrado");
     }
 
 
