@@ -1,0 +1,36 @@
+.Menu {
+    margin: 15% 0% 0% 20%;
+    display: flex;
+    flex-direction: column;
+    width: 150px;
+    align-self: center;
+    align-content: center;
+    align-items: center;
+    overflow: hidden;
+    height: 8rem;
+    background: rgb(49, 46, 46);
+    border-radius: 20%;
+}
+
+.Menu nav {
+    flex-grow: 1;
+}
+
+.Menu ul {
+    list-style: none;
+    padding: 0;
+}
+
+.Menu li {
+    display: flex;
+}
+
+.Menu li a {
+    display: flex;
+    flex-direction: column;
+    align-items: space-between;
+
+    text-decoration: none;
+    color: #fff;
+    font-size: 1rem;
+}

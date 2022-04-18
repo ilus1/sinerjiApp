@@ -1,0 +1,16 @@
+
+
+.Navbar {
+    display: flex;
+    flex-direction: column;
+    height: 3em;
+    flex-wrap: wrap;
+
+    width: 100vw;
+    justify-content: center;
+    text-align: center;
+    color: antiquewhite;
+    margin: 0px;
+
+    background: rgb(49, 46, 46);
+}

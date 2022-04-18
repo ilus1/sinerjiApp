@@ -1,0 +1,66 @@
+
+table {
+    display: inline-table;
+
+    width: auto;
+    background-color:bisque;
+    text-align: left;
+    border-radius: 30px;
+    margin-left: 20px;
+    padding-left: 20px;
+    overflow: hidden;
+
+    box-shadow: 8px 8px 15px 3px rgba(0,0,0,0.73);
+
+    max-height: 800px;
+    min-height: 400px;
+}
+
+table thead {
+    background-color: rgb(48, 46, 46);
+    color: antiquewhite;
+    margin: 0;
+    border-radius: 50px;
+}
+
+.Display {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+tr {
+	width: fit-content;
+}
+
+th, td {
+    align-items: center;
+    border: 1px solid black;
+    width: 100px;
+}
+
+.Buttons {
+	background: none;
+	color: inherit;
+	border: none;
+	padding-right: 5px;
+	font: inherit;
+	outline: inherit;
+}
+
+.Icons {
+	size: 28px;
+}
+
+.NewUserForm {
+    display: flex;
+    flex-direction: column;
+    box-shadow: 8px 8px 15px 3px rgba(0,0,0,0.73);
+
+    padding: 25px 0px 0px 10px;
+    background-color:bisque;
+    width: 15%;
+    border-radius: 50px;
+    height: 400px;
+}
