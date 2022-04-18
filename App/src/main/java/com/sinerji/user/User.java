@@ -1,6 +1,7 @@
 package com.sinerji.user;
 
 import javax.persistence.*;
+import javax.validation.constraints.Pattern;
 import java.util.Date;
 
 @Entity
@@ -9,10 +10,12 @@ public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-
+    //[a-zA-záÁàÀéÉíÍóÓãõẽâôê]
+    @Pattern(regexp = "^[a-zA-Z0-9]{6,30}@[a-zA-Z0-9]{3,6}\\.[a-zA-Z0-9]{3,4}(\\.[a-zA-Z0-9]{2,4})?$")
     @Column(nullable = false, unique = true, length = 45)
     private String email;
 
+    @Pattern(regexp = "^[\d]{11}$")
     @Column(nullable = false, unique = true, length = 45)
     private String cpf;
 

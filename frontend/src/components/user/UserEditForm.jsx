@@ -51,12 +51,6 @@ export default _ => {
                         onChange={e => setEmail(e.target.value)}
                         value={email}/>
                 </label>
-                <label>Senha:
-                    <input
-                        type='text'
-                        placeholder='Senha do usuário'
-                        onChange={e => setPassword(e.target.value)}/>
-                </label>
                 <label>Cpf:
                     <input
                         type='text'
@@ -68,6 +62,12 @@ export default _ => {
                     <input
                         type='Date'
                         onChange={e => setBirthDate(e.target.value)}/>
+                </label>
+                <label>Senha:
+                    <input
+                        type='password'
+                        placeholder='Senha do usuário'
+                        onChange={e => setPassword(e.target.value)}/>
                 </label>
                 <button type='submit'>Salvar</button>
             </form>

@@ -34,12 +34,6 @@ export default props => {
                         placeholder='Email do usuário'
                         onChange={e => setEmail(e.target.value)}/>
                 </label>
-                <label>Senha:
-                    <input
-                        type='text'
-                        placeholder='Senha do usuário'
-                        onChange={e => setPassword(e.target.value)}/>
-                </label>
                 <label>Cpf:
                     <input
                         type='text'
@@ -50,6 +44,12 @@ export default props => {
                     <input
                         type='Date'
                         onChange={e => setBirthDate(e.target.value)}/>
+                </label>
+                <label>Senha:
+                    <input
+                        type='password'
+                        placeholder='Senha do usuário'
+                        onChange={e => setPassword(e.target.value)}/>
                 </label>
                 <button type='submit'>Criar</button>
             </form>
