@@ -2,6 +2,7 @@ import React from 'react';
 import { useNavigate } from "react-router-dom";
 import { BsTrash } from 'react-icons/bs';
 import { HiOutlinePencil } from 'react-icons/hi';
+import { deleteUser } from '../services/api';
 
 
 export default (props) => {
@@ -22,8 +23,8 @@ export default (props) => {
                     </button>
                     <button className='Buttons' onClick={e => {
                         e.preventDefault();
-                        navigate(`/delete/${element.id}`)
-                    }}>
+                        deleteUser(element.id);
+                        window.location.reload(false);}}>
                         <BsTrash className='Icons'/>
                     </button>
                 </td>

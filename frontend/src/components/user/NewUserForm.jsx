@@ -1,19 +1,27 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 
 import { newUser } from '../services/api'
+import { useNavigate } from 'react-router-dom'
 
 
 export default props => {
+    const navigate = useNavigate()
     const [name, setName] = useState('')
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
     const [cpf, setCpf] = useState('')
     const [birthdate, setBirthDate] = useState('')
 
+    function submit(e) {
+        e.preventDefault()
+        newUser(name, email, password, cpf, birthdate)
+        navigate('/');
+    }
+
     return (
         <div className='UserForm'>
             <span><b>Novo Usuário</b></span>
-            <form onSubmit={newUser(name, email, password, cpf, birthdate)}>
+            <form onSubmit={e => submit(e)}>
                 <label>Nome
                     <input
                         type='text'

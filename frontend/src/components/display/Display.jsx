@@ -11,8 +11,8 @@ export default props => {
         <div className='Display'>
             <Routes>
                 <Route exact path='/' element={<UserList/>} />
-                <Route path='/new' element={<NewUserForm/>} />
-                <Route path='/edit/{id}' element={<UserEditForm/>} />
+                <Route path='/users/new' element={<NewUserForm/>} />
+                <Route path='/edit/*' element={<UserEditForm/>} />
             </Routes>
         </div>
     )

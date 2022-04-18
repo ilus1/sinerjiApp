@@ -12,7 +12,7 @@ export function getList() {
 
 
 export function newUser(name, email, passowrd, cpf, birthdate) {
-    axios.post((`${BASE_URL}/new`) , {
+    axios.post((`${BASE_URL}/users/new`) , {
         "name": name,
         "email": email,
         "passowrd": passowrd,
@@ -25,12 +25,19 @@ export function newUser(name, email, passowrd, cpf, birthdate) {
 
 
 export function updateUser(name, email, passowrd, cpf, birthdate, id) {
-    axios.update((`${BASE_URL}/edit${id}`) , {
+    axios.update((`${BASE_URL}/users/edit/${id}`) , {
         "name": name,
         "email": email,
         "passowrd": passowrd,
         "cpf": cpf,
         "birthdate": birthdate
+    }).then(resp => {
+        console.log(resp)
+    })
+}
+
+export function deleteUser(id) {
+    axios.delete((`${BASE_URL}/users/delete/${id}`) , {
     }).then(resp => {
         console.log(resp)
     })

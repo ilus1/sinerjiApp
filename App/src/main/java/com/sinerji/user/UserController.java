@@ -3,15 +3,15 @@ package com.sinerji.user;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import java.util.List;
 
+
+@CrossOrigin(origins = "http://localhost:3000")
 @RestController
 public class UserController {
     @Autowired private UserRepository repo;
     @Autowired private UserService service;
-
     @GetMapping("/users")
     public List<User> showUserList(Model model) {
         List<User> listUsers = service.listaAll();
@@ -20,13 +20,14 @@ public class UserController {
         return listUsers;
     }
 
+
     @PostMapping("/users/new")
     public String newUser(@RequestBody User user) {
         repo.save(user);
         return "Usuário cadastrado com sucesso.";
     }
 
-   @PutMapping("/users/edit/{id}")
+    @PutMapping("/users/edit/{id}")
     public String showEditForm(@PathVariable("id") Integer id, @RequestBody User modifiedUser) {
         System.out.println("erro");
         try {
@@ -43,7 +44,7 @@ public class UserController {
 
    }
 
-    @GetMapping("/users/delete/{id}")
+    @DeleteMapping("/users/delete/{id}")
     public String deleteUser(@PathVariable("id") Integer id) {
         try {
             service.delete(id);
