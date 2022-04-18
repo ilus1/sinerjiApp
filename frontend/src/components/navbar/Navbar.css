@@ -14,3 +14,18 @@
 
     background: rgb(49, 46, 46);
 }
+
+.LinkCenter {
+    display: flex;
+    flex-grow: 10;
+    text-decoration: none;
+    color: antiquewhite;
+    align-self: left;
+}
+
+.LinkLeft {
+    display: flex;
+    text-decoration: none;
+    color: antiquewhite;
+    align-items: left;
+}

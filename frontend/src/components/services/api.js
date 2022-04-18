@@ -22,3 +22,16 @@ export function newUser(name, email, passowrd, cpf, birthdate) {
         console.log(resp)
     })
 }
+
+
+export function updateUser(name, email, passowrd, cpf, birthdate, id) {
+    axios.update((`${BASE_URL}/edit${id}`) , {
+        "name": name,
+        "email": email,
+        "passowrd": passowrd,
+        "cpf": cpf,
+        "birthdate": birthdate
+    }).then(resp => {
+        console.log(resp)
+    })
+}

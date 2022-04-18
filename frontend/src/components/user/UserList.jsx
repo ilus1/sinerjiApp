@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react'
 
 import axios from 'axios'
-import { getList } from '../services/api'
 import User from './User'
 const BASE_URL = 'http://localhost:8080'
 
@@ -12,9 +11,6 @@ export default props => {
         axios.get(`${BASE_URL}/users`)
         .then(resp => setUsers(resp.data))
     }, []);
-
-
-    console.log(users)
 
     return (
         <table className='ContentTable'>
@@ -28,8 +24,7 @@ export default props => {
                 </tr>
             </thead>
             <tbody>
-                {users.length > 0 ? <User users={users}/>: null
-                }
+                {users.length > 0 ? <User users={users}/>: null}
             </tbody>
         </table>
     )

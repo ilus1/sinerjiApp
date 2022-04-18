@@ -1,25 +1,19 @@
 import React from 'react'
-import { Switch, Route } from 'react-router-dom'
+import { Routes, Route } from 'react-router-dom'
 
-import NewUserForm from './NewUserForm'
-import UserEditForm from './UserEditForm'
+import NewUserForm from '../user/NewUserForm'
+import UserEditForm from '../user/UserEditForm'
 import UserList from '../user/UserList'
 import './Display.css'
 
 export default props => {
     return (
         <div className='Display'>
-            <Switch>
-                <Route exact path='/'>
-                    <UserList/>
-                </Route>
-                <Route path='/new'>
-                    <NewUserForm/>
-                </Route>
-                <Route path='/edit/{id}'>
-                    <UserEditForm/>
-                </Route>
-            </Switch>
+            <Routes>
+                <Route exact path='/' element={<UserList/>} />
+                <Route path='/new' element={<NewUserForm/>} />
+                <Route path='/edit/{id}' element={<UserEditForm/>} />
+            </Routes>
         </div>
     )
 }

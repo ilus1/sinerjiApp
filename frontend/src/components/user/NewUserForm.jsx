@@ -11,7 +11,7 @@ export default props => {
     const [birthdate, setBirthDate] = useState('')
 
     return (
-        <div className='NewUserForm'>
+        <div className='UserForm'>
             <span><b>Novo Usuário</b></span>
             <form onSubmit={newUser(name, email, password, cpf, birthdate)}>
                 <label>Nome
