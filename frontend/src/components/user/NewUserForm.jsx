@@ -20,7 +20,7 @@ export default props => {
 
     return (
         <div className='UserForm'>
-            <span><b>Novo Usuário</b></span>
+            <span className='Title'><b>Novo Usuário</b></span>
             <form onSubmit={e => submit(e)}>
                 <label>Nome
                     <input
@@ -47,6 +47,7 @@ export default props => {
                 </label>
                 <label>Senha:
                     <input
+                        className='SubmitButton'
                         type='password'
                         placeholder='Senha do usuário'
                         onChange={e => setPassword(e.target.value)}/>

@@ -35,7 +35,7 @@ export default _ => {
 
     return (
         <div className='UserForm'>
-            <span><b>Alteração de Dados</b></span>
+            <span className='Title'><b>Alteração de Dados</b></span>
             <form onSubmit={e => submit(e)}>
                 <label>Nome
                     <input
@@ -65,6 +65,7 @@ export default _ => {
                 </label>
                 <label>Senha:
                     <input
+                        className='SubmitButton'
                         type='password'
                         placeholder='Senha do usuário'
                         onChange={e => setPassword(e.target.value)}/>

@@ -15,17 +15,20 @@ public class User {
     @Column(nullable = false, unique = true, length = 45)
     private String email;
 
-    @Pattern(regexp = "^[\d]{11}$")
+    @Pattern(regexp = "^[\\d]{11}$")
     @Column(nullable = false, unique = true, length = 45)
     private String cpf;
 
+    @Pattern(regexp = "^[a-zA-z ]{3,255}$")
     @Column(nullable = false, length = 255)
     private String name;
 
+    //@Pattern(regexp = "^[0-9]{6,30}$")
     @Column(nullable = true, length = 255)
     private String password;
 
-    @Column(nullable=true)
+    //@Pattern(regexp = "")
+    @Column(nullable = false)
     private Date birthdate;
 
     public User() {

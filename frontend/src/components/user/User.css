@@ -1,0 +1,28 @@
+.Buttons {
+	background: none;
+	color: inherit;
+	border: none;
+	padding-right: 5px;
+	font: inherit;
+	outline: inherit;
+}
+
+.DeleteButton {
+	color: red;
+}
+
+.SubmitButton {
+    
+}
+
+.UserForm {
+    display: flex;
+    flex-direction: column;
+    box-shadow: 8px 8px 15px 3px rgba(0,0,0,0.73);
+
+    padding: 25px 0px 0px 10px;
+    background-color:rgb(255, 239, 220);
+    width: 15%;
+    border-radius: 50px;
+    height: 400px;
+}

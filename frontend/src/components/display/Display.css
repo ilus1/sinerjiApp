@@ -3,7 +3,7 @@ table {
     display: inline-block;
 
     width: auto;
-    background-color:bisque;
+    background-color:rgb(255, 239, 220);
     text-align: left;
     border-radius: 30px;
     overflow: hidden;
@@ -31,34 +31,19 @@ tr {
 	width: fit-content;
 }
 
+.Fixedtd {
+    width: 3rem;
+}
+
 th, td {
+    padding: 5px;
     align-items: center;
     border: 1px solid black;
     width: 100px;
     padding-left: 10px;
 }
 
-.Buttons {
-	background: none;
-	color: inherit;
-	border: none;
-	padding-right: 5px;
-	font: inherit;
-	outline: inherit;
-}
-
-.Icons {
-	size: 28px;
-}
-
-.UserForm {
-    display: flex;
-    flex-direction: column;
-    box-shadow: 8px 8px 15px 3px rgba(0,0,0,0.73);
-
-    padding: 25px 0px 0px 10px;
-    background-color:bisque;
-    width: 15%;
-    border-radius: 50px;
-    height: 400px;
+.Title {
+    text-align: center;
+    padding-bottom: 20px;
 }

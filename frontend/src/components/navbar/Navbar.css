@@ -20,11 +20,16 @@
     text-decoration: none;
     color: antiquewhite;
     align-self: left;
+    margin-left: -150px;
 }
 
-.LinkLeft {
-    display: flex;
+.NewUser {
+    border-radius: 30px;
+    width: 150px;
+    height: 30px;
+    align-self: right;
+    background-color: rgb(129, 154, 93);
     text-decoration: none;
     color: antiquewhite;
-    align-items: left;
+    box-shadow: 7px 5px 15px 0px rgba(0,0,0,0.85);
 }

@@ -11,6 +11,7 @@ export function getList() {
 }
 
 export function newUser(name, email, passowrd, cpf, birthdate) {
+    console.log(`{ "name": "${name}", "email": "${email}", "password": "${passowrd}", "cpf": "${cpf}", "birthdate": "${birthdate}" }`)
     axios.post((`${BASE_URL}/users/new`) , {
         "name": name,
         "email": email,

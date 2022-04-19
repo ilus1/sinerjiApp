@@ -5,6 +5,7 @@ import NewUserForm from '../user/NewUserForm'
 import UserEditForm from '../user/UserEditForm'
 import UserList from '../user/UserList'
 import './Display.css'
+import '../user/User.css'
 
 export default props => {
     return (

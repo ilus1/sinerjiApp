@@ -1,7 +1,7 @@
 import React from 'react';
 import { useNavigate } from "react-router-dom";
-import { BsTrash } from 'react-icons/bs';
-import { HiOutlinePencil } from 'react-icons/hi';
+import { FaTrash } from 'react-icons/fa';
+import { RiPencilFill } from 'react-icons/ri';
 import { deleteUser } from '../services/api';
 
 
@@ -19,13 +19,13 @@ export default (props) => {
                     <button className='Buttons' onClick={e => {
                         e.preventDefault();
                         navigate(`/edit/${element.id}`)}}>
-                        <HiOutlinePencil />
+                        <RiPencilFill className='EditButton'/>
                     </button>
                     <button className='Buttons' onClick={e => {
                         e.preventDefault();
                         deleteUser(element.id);
                         window.location.reload(false);}}>
-                        <BsTrash className='Icons'/>
+                        <FaTrash className='DeleteButton'/>
                     </button>
                 </td>
             </tr>
